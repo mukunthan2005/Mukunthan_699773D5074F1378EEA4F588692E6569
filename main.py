@@ -1,35 +1,30 @@
-def factorial(n): 
+class Bank_Account:
+  def __init__(self):
+      self.balance=0
+      print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
 
+  def deposit(self):
+      amount=float(input("Enter amount to be Deposited: "))
+      self.balance += amount
+      print("\n Amount Deposited:",amount)
 
+  def withdraw(self):
+      amount = float(input("Enter amount to be Withdrawn: "))
+      if self.balance>=amount:
+          self.balance-=amount
+          print("\n You Withdrew:", amount)
+      else:
+          print("\n Insufficient balance  ")
 
-    # Checking the number
+  def display(self):
+      print("\n Net Available Balance=",self.balance)
 
-    # is 1 or 0 then
+# Driver code
 
-    # return 1
+# creating an object of class
+s = Bank_Account()
 
-    # other wise return
-
-    # factorial
-
-    if (n==1 or n==0):
-
-
-
-        return 1
-
-
-
-    else:
-
-
-
-        return (n * factorial(n - 1)) 
-
-# Driver Code 
-
-num = 5; 
-
-print("number : ",num)
-
-print("Factorial : ",factorial(num))
+# Calling functions with that class object
+s.deposit()
+s.withdraw()
+s.display()
